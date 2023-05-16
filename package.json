@@ -1,0 +1,109 @@
+{
+  "name": "nals",
+  "displayName": "nals",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "nals.helloWorld",
+        "title": "nals:Hello NALS"
+      },
+      {
+        "command": "nals.readWriteFile",
+        "title": "nals:Read Write File"
+      },
+      {
+        "command": "nals.genFolder",
+        "title": "nals:Gen Folder"
+      },
+      {
+        "command": "nals.convertCode",
+        "title": "nals:Convert Code"
+      },
+      {
+        "command": "nals.wrapWithBlocBuilder",
+        "title": "nals:Wrap Code"
+      },
+      {
+        "command": "nals.autoExport",
+        "title": "nals:Auto Export"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "nals.genFolder",
+          "group": "nals@1",
+          "when": "explorerResourceIsFolder"
+        }
+      ]
+    },
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets/log.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/use_case.json"
+      }
+    ],
+    "configuration": {
+      "title": "NALS settings",
+      "properties": {
+        "nals.excludeFilesWhenAutoExport": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "A list of generated file extensions to exclude",
+          "default": [
+            "g.dart",
+            "config.dart",
+            "freezed.dart"
+          ]
+        },
+        "nals.autoExportOnSave": {
+          "type": "boolean",
+          "description": "Auto export on file save",
+          "default": false
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/lodash": "^4.14.194",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.78.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "@vscode/test-electron": "^2.3.0",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "lodash": "^4.17.21",
+    "mocha": "^10.2.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "change-case": "^4.1.2"
+  }
+}

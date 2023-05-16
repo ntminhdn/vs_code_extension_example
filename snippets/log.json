@@ -1,0 +1,9 @@
+{
+  "Console log": {
+    "prefix": "cl",
+    "body": [
+      "console.log(${1|`,'|}${2:Hello World}${1});"
+    ],
+    "description": "console log"
+  }
+}
