@@ -1,3 +1,3 @@
-# nals README
+# README
 
 **Enjoy!**

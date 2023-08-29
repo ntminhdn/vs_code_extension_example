@@ -1,13 +1,13 @@
 import * as vscode from 'vscode';
 
 export class MyConfig {
-    excludeExt: Array<string>;
-    autoExportOnSave: boolean;
+    copyRightContent: string;
+    addCopyRightOnSave: boolean;
 
     constructor() {
-        const config = vscode.workspace.getConfiguration('nals') as vscode.WorkspaceConfiguration;
+        const config = vscode.workspace.getConfiguration('myconfig') as vscode.WorkspaceConfiguration;
 
-        this.excludeExt = config.get('excludeFilesWhenAutoExport') || [];
-        this.autoExportOnSave = config.get('autoExportOnSave') || false;
+        this.copyRightContent = config.get('copyRightContent') || '';
+        this.addCopyRightOnSave = config.get('addCopyRightOnSave') || false;
     }
 }

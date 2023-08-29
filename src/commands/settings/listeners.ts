@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { MyConfig } from '../settings/my_config'
-import { autoExport } from './auto_export';
+import { addDynamicCopyright } from './add_dynamic_copyright';
 
 export let myConfig = new MyConfig();
 
@@ -14,8 +14,8 @@ export const configChanges = vscode.workspace.onDidChangeConfiguration((e) => {
 export const documentSave = vscode.workspace.onDidSaveTextDocument(
     async (e: vscode.TextDocument) => {
         console.log('onDidSaveTextDocument');
-        if (myConfig.autoExportOnSave) {
-            autoExport();
+        if (myConfig.addCopyRightOnSave) {
+            addDynamicCopyright();
         }
     },
 );

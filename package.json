@@ -1,6 +1,6 @@
 {
-  "name": "nals",
-  "displayName": "nals",
+  "name": "helloworld",
+  "displayName": "HelloWorld",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -14,35 +14,31 @@
   "contributes": {
     "commands": [
       {
-        "command": "nals.helloWorld",
-        "title": "nals:Hello NALS"
+        "command": "helloworld.helloWorld",
+        "title": "MyTool: Hello World"
       },
       {
-        "command": "nals.readWriteFile",
-        "title": "nals:Read Write File"
+        "command": "helloworld.addCopyRight",
+        "title": "MyTool: Add Copyright"
       },
       {
-        "command": "nals.genFolder",
-        "title": "nals:Gen Folder"
+        "command": "helloworld.createNewPage",
+        "title": "MyTool: Create New Page"
       },
       {
-        "command": "nals.convertCode",
-        "title": "nals:Convert Code"
+        "command": "helloworld.convertToTemplateString",
+        "title": "MyTool: Convert To Template String"
       },
       {
-        "command": "nals.wrapWithBlocBuilder",
-        "title": "nals:Wrap Code"
-      },
-      {
-        "command": "nals.autoExport",
-        "title": "nals:Auto Export"
+        "command": "helloworld.addDynamicCopyright",
+        "title": "MyTool: Add Dynamic Copyright"
       }
     ],
     "menus": {
       "explorer/context": [
         {
-          "command": "nals.genFolder",
-          "group": "nals@1",
+          "command": "helloworld.createNewPage",
+          "group": "helloworld@1",
           "when": "explorerResourceIsFolder"
         }
       ]
@@ -58,9 +54,9 @@
       }
     ],
     "configuration": {
-      "title": "NALS settings",
+      "title": "My settings",
       "properties": {
-        "nals.excludeFilesWhenAutoExport": {
+        "myconfig.excludeFilesWhenAutoExport": {
           "type": "array",
           "items": {
             "type": "string"
@@ -72,7 +68,7 @@
             "freezed.dart"
           ]
         },
-        "nals.autoExportOnSave": {
+        "myconfig.autoExportOnSave": {
           "type": "boolean",
           "description": "Auto export on file save",
           "default": false

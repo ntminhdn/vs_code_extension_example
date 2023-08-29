@@ -4,12 +4,10 @@ import * as changeCase from "change-case";
 import { writeFile, showPrompt } from "../../utils/utils";
 import * as fs from "fs";
 import { getPageTemplate } from "./templates/page.template";
-import { getBlocTemplate } from "./templates/bloc.template";
-import { getBlocEventTemplate } from "./templates/bloc-event.template";
-import { getBlocStateTemplate } from "./templates/bloc-state.template";
-import { getExportBlocTemplate } from "./templates/export-bloc.template";
+import { getViewModelTemplate } from "./templates/view_model.template";
+import { getStateTemplate } from "./templates/state.template";
 
-export const genFolder = async (uri: vscode.Uri) => {
+export const createNewPage = async (uri: vscode.Uri) => {
   if (
     lo.isNil(lo.get(uri, "fsPath")) ||
     !fs.lstatSync(uri.fsPath).isDirectory()
@@ -28,14 +26,12 @@ export const genFolder = async (uri: vscode.Uri) => {
 
   let featureFolderName = changeCase.snakeCase(featureName);
   let featureFolderPath = `${targetDirectory}/${featureFolderName}`;
-  let blocFolderPath = `${featureFolderPath}/bloc`;
+  let viewModelFolderPath = `${featureFolderPath}/view_model`;
 
   await Promise.all([
     genFile(featureFolderPath, `${featureFolderName}_page.dart`, getPageTemplate(featureName)),
-    genFile(blocFolderPath, `${featureFolderName}_bloc.dart`, getBlocTemplate(featureName)),
-    genFile(blocFolderPath, `${featureFolderName}_event.dart`, getBlocEventTemplate(featureName)),
-    genFile(blocFolderPath, `${featureFolderName}_state.dart`, getBlocStateTemplate(featureName)),
-    genFile(blocFolderPath, `${featureFolderName}.dart`, getExportBlocTemplate(featureName)),
+    genFile(viewModelFolderPath, `${featureFolderName}_view_model.dart`, getViewModelTemplate(featureName)),
+    genFile(viewModelFolderPath, `${featureFolderName}_state.dart`, getStateTemplate(featureName)),
   ]);
 
   vscode.window.showInformationMessage("Done!");
