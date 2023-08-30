@@ -15,7 +15,7 @@
     "commands": [
       {
         "command": "helloworld.helloWorld",
-        "title": "MyTool: Hello World"
+        "title": "Hello World"
       },
       {
         "command": "helloworld.addCopyRight",

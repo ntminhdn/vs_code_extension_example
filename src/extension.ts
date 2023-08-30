@@ -12,8 +12,8 @@ import { configChanges, documentSave } from "./commands/settings/listeners";
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
     vscode.commands.registerCommand("helloworld.helloWorld", helloWorld),
-    vscode.commands.registerCommand("helloworld.createNewPage", createNewPage),
     vscode.commands.registerCommand("helloworld.addCopyRight", addCopyRight),
+	vscode.commands.registerCommand("helloworld.createNewPage", createNewPage),
     vscode.commands.registerCommand(
       "helloworld.convertToTemplateString",
       convertToTemplateString
