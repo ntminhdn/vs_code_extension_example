@@ -4,8 +4,8 @@ import { addCopyRight } from "./commands/add_copyright";
 import { convertToTemplateString } from "./commands/convert_to_template_string";
 import { createNewPage } from "./commands/create_new_page/create_new_page";
 import { helloWorld } from "./commands/hello_world";
-import { addDynamicCopyright } from "./commands/add_dynamic_copyright/add_dynamic_copyright";
-import { configChanges, documentSave } from "./commands/add_dynamic_copyright/listeners";
+import { addDynamicCopyright } from "./commands/add_dynamic_copyright";
+import { configChanges, documentSave } from "./config/listeners";
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed

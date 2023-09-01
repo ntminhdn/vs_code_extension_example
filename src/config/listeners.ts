@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { MyConfig } from './my_config'
-import { addDynamicCopyright } from './add_dynamic_copyright';
+import { addDynamicCopyright } from '../commands/add_dynamic_copyright';
 
 export let myConfig = new MyConfig();
 

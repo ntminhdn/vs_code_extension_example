@@ -3,8 +3,8 @@ import {
   currentPath,
   readFile,
   writeFile,
-} from "../../utils/utils";
-import { myConfig } from "./listeners";
+} from "../utils/utils";
+import { myConfig } from "../config/listeners";
 
 export const addDynamicCopyright = async () => {
   const language = vscode.window.activeTextEditor?.document.languageId;
