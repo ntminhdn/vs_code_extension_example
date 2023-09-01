@@ -2,7 +2,9 @@ import * as vscode from 'vscode';
 import { editSelection, selectedText } from '../utils/utils';
 
 export const convertToTemplateString = async () => {
+    // get selected text
     const text = selectedText().trim();
+
     // If the text is empty, show error
     if (text === "") {
         vscode.window.showErrorMessage(`Selected text is empty. Please select the text`);
@@ -23,6 +25,8 @@ export const convertToTemplateString = async () => {
         return;
     }
 
+    // convert selected text to template string
     editSelection(`\`${match[2]}\``);
+    
     vscode.window.showInformationMessage('Done!');
 };

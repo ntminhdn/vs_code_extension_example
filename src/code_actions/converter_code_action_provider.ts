@@ -6,8 +6,10 @@ export class ConverterCodeActionProvider implements vscode.CodeActionProvider {
     const editor = vscode.window.activeTextEditor;
     if (!editor) return [];
 
+    // If the selected text is empty, don't show the code action in quick fix menu
     if (selectedText() === "") return [];
 
+    // show the code action in quick fix menu
     return [
       {
         command: "helloworld.convertToTemplateString",

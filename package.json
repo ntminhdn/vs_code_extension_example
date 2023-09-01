@@ -56,21 +56,14 @@
     "configuration": {
       "title": "My settings",
       "properties": {
-        "myconfig.excludeFilesWhenAutoExport": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "A list of generated file extensions to exclude",
-          "default": [
-            "g.dart",
-            "config.dart",
-            "freezed.dart"
-          ]
+        "myconfig.copyRightContent": {
+          "type": "string",
+          "description": "CopyRight Content",
+          "default": "Copyright © 2023 — NAL Solutions. All Rights Reserved"
         },
-        "myconfig.autoExportOnSave": {
+        "myconfig.addCopyRightOnSave": {
           "type": "boolean",
-          "description": "Auto export on file save",
+          "description": "Adding Copyright on file save",
           "default": false
         }
       }
