@@ -1,6 +1,6 @@
 {
     "Create a BaseFutureUseCase": {
-        "prefix": "fuck",
+        "prefix": "fuc",
         "body": [
             "import 'package:freezed_annotation/freezed_annotation.dart';",
             "import 'package:injectable/injectable.dart';",
@@ -44,7 +44,7 @@
         "description": "Create a BaseFutureUseCase"
     },
     "Create a BaseSyncUseCase": {
-        "prefix": "suck",
+        "prefix": "suc",
         "body": [
             "import 'package:freezed_annotation/freezed_annotation.dart';",
             "import 'package:injectable/injectable.dart';",
