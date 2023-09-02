@@ -49,8 +49,8 @@
         "path": "./snippets/log.json"
       },
       {
-        "language": "typescript",
-        "path": "./snippets/use_case.json"
+        "language": "dart",
+        "path": "./snippets/view_model.json"
       }
     ],
     "configuration": {

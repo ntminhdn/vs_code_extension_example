@@ -1,0 +1,16 @@
+{
+  "Create a ViewModel class": {
+    "prefix": "vm",
+    "body": [
+      "class ${1:Home}ViewModel {",
+      "  ${1:Home}ViewModel({",
+      "    required this.${2/(.*)/${1:/camelcase}/}Repository,",
+      "  });",
+      "",
+      "  final ${2:User}Repository ${2/(.*)/${1:/camelcase}/}Repository;",
+      "}",
+      ""
+    ],
+    "description": "Create a ViewModel class"
+  }
+}
